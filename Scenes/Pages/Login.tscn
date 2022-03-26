@@ -1,0 +1,111 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Pages/Login.gd" type="Script" id=1]
+
+[sub_resource type="InputEventKey" id=1]
+pressed = true
+scancode = 16777221
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[node name="Login" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+PATH_EmailTextField = NodePath("Container/VBoxContainer/EmailInput")
+PATH_PasswordTextField = NodePath("Container/VBoxContainer/PasswordInput")
+PATH_ErrorText = NodePath("Container/VBoxContainer/ErrorText")
+
+[node name="Container" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = -60.0
+margin_right = 210.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 420, 120 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Container/VBoxContainer"]
+margin_right = 420.0
+margin_bottom = 14.0
+text = "Email"
+align = 1
+valign = 1
+
+[node name="EmailInput" type="LineEdit" parent="Container/VBoxContainer"]
+margin_top = 18.0
+margin_right = 420.0
+margin_bottom = 42.0
+align = 1
+clear_button_enabled = true
+placeholder_text = "CubenPete@NT.com"
+caret_blink = true
+
+[node name="Label2" type="Label" parent="Container/VBoxContainer"]
+margin_top = 46.0
+margin_right = 420.0
+margin_bottom = 60.0
+text = "Password"
+align = 1
+valign = 1
+
+[node name="PasswordInput" type="LineEdit" parent="Container/VBoxContainer"]
+margin_top = 64.0
+margin_right = 420.0
+margin_bottom = 88.0
+align = 1
+secret = true
+clear_button_enabled = true
+placeholder_text = "Enter your password here!"
+caret_blink = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer"]
+margin_top = 92.0
+margin_right = 420.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 0, 21 )
+alignment = 1
+
+[node name="SignupButton" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+margin_left = 58.0
+margin_right = 148.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 90, 21 )
+text = "Sign up"
+
+[node name="LoginButton" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+margin_left = 152.0
+margin_right = 242.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 90, 21 )
+shortcut = SubResource( 2 )
+text = "Login"
+
+[node name="ForgotPass" type="Button" parent="Container/VBoxContainer/HBoxContainer"]
+margin_left = 246.0
+margin_right = 362.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 90, 21 )
+disabled = true
+text = "Forgot Password"
+
+[node name="ErrorText" type="Label" parent="Container/VBoxContainer"]
+margin_top = 117.0
+margin_right = 420.0
+margin_bottom = 131.0
+text = "This is an error"
+align = 1
+valign = 1

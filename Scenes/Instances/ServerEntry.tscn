@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Instances/ServerEntry.gd" type="Script" id=2]
+
+[node name="ServerEntry" type="Panel"]
+margin_right = 1024.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 0, 92 )
+script = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ServerIcon" type="TextureRect" parent="HBoxContainer"]
+margin_right = 91.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 91, 91 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_left = 95.0
+margin_right = 99.0
+margin_bottom = 91.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 103.0
+margin_right = 903.0
+margin_bottom = 91.0
+alignment = 1
+
+[node name="ServerName" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+margin_top = 25.0
+margin_right = 800.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 800, 40 )
+bbcode_enabled = true
+bbcode_text = "Server Name"
+text = "Server Name"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_left = 907.0
+margin_right = 1019.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 112, 40 )
+text = "Download"
+
+[connection signal="button_down" from="HBoxContainer/Button" to="." method="_on_Button_button_down"]
