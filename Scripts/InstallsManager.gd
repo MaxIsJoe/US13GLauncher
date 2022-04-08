@@ -34,6 +34,7 @@ func CreateVersionFolder(version : String):
 
 func StoreDownloadedFiles(body, version):
 	var file = File.new()
-	file.open(str(InstallsPath + version), _File.WRITE)
+	file.open(str(InstallsPath + version), File.WRITE)
 	file.store_buffer(body)
 	file.close()
+
