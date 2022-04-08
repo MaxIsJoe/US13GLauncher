@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "InstallsManager",
+"language": "GDScript",
+"path": "res://Scripts/InstallsManager.gd"
+}, {
 "base": "Control",
 "class": "MainScene",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://Scenes/Pages/Servers.gd"
 } ]
 _global_script_class_icons={
+"InstallsManager": "",
 "MainScene": "",
 "ServerEntryUI": "",
 "ServerListUI": ""
@@ -40,6 +46,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+Backend="*res://Scenes/Autoload/Backend.tscn"
 
 [display]
 

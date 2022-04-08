@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Pages/Servers.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/InternetRequests.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -61,18 +60,3 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
-
-[node name="Backend" type="Node" parent="."]
-
-[node name="InternetRequests" type="Node" parent="Backend"]
-script = ExtResource( 3 )
-
-[node name="ServerRequests" type="HTTPRequest" parent="Backend/InternetRequests"]
-
-[node name="NewsRequests" type="HTTPRequest" parent="Backend/InternetRequests"]
-
-[node name="mahballsManagers" type="Node" parent="Backend"]
-
-[node name="SettingsManager" type="Node" parent="Backend"]
-
-[connection signal="request_completed" from="Backend/InternetRequests/ServerRequests" to="Backend/InternetRequests" method="_on_HTTPRequest_request_completed"]

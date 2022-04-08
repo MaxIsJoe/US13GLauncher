@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/InternetRequests.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/InstallsManager.gd" type="Script" id=2]
+
+[node name="Backend" type="Node"]
+
+[node name="InternetRequests" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="ServerRequests" type="HTTPRequest" parent="InternetRequests"]
+
+[node name="NewsRequests" type="HTTPRequest" parent="InternetRequests"]
+
+[node name="InstallsManager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="SettingsManager" type="Node" parent="."]
+
+[connection signal="request_completed" from="InternetRequests/ServerRequests" to="InternetRequests" method="_on_HTTPRequest_request_completed"]
